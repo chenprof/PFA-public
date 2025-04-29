@@ -1,0 +1,145 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #f4f6fc;
+  }
+  
+  header {
+    text-align: center;
+    padding: 20px;
+    position: relative;
+  }
+  
+  .user-icon {
+    position: absolute;
+    left: 30px;
+    top: 20px;
+    font-size: 50px;
+    cursor: pointer;
+    color: #4169ff;
+  }
+  
+  h1 {
+    font-size: 48px;
+    color: #4169ff;
+  }
+  
+  .cards {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 60px;
+  }
+  
+  .card {
+    width: 250px;
+    height: 250px;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: transform 0.2s;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  .examen {
+    background-color: #c1a7fa;
+  }
+
+  .qcm{
+    background-color:#63230F;
+  }
+  .video{
+    background-color:#9917A8;
+  }
+  
+  .mini-test {
+    background-color: #ff9d9d;
+  }
+  .texte-a-trou{
+    background-color:#167AB0;
+  }
+  .lecture {
+    background-color: #89dfb3;
+  }
+  
+  /* Sidebar styles */
+  .sidebar {
+    position: fixed;
+    left: -350px;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    background-color: white;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+    padding: 20px;
+    transition: left 0.3s ease-in-out;
+    z-index: 1000;
+  }
+  
+  .sidebar.open {
+    left: 0;
+  }
+  
+  .sidebar-content h2 {
+    color: #0047ab;
+    font-size: 28px;
+    margin-bottom: 5px;
+  }
+  
+  .sidebar-content .niveau {
+    color: red;
+  }
+  
+  .progress-section {
+    margin-top: 30px;
+  }
+  
+  .progress-section h3 {
+    font-weight: normal;
+    font-size: 20px;
+  }
+  
+  .progress-bar {
+    width: 100%;
+    height: 10px;
+    background-color: #ccc;
+    margin: 10px 0;
+    border-radius: 5px;
+  }
+  
+  .progress {
+    height: 100%;
+    background-color: #00c776;
+    border-radius: 5px;
+  }
+  
+  .pourcentage {
+    color: #00c776;
+    font-weight: bold;
+  }
+  
+  .menu {
+    margin-top: 50px;
+  }
+  
+  .menu-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    margin-bottom: 25px;
+    cursor: pointer;
+  }
+  
+  .menu-item .icon {
+    font-size: 22px;
+  }
+  

@@ -1,0 +1,244 @@
+<!DOCTYPE html>   <!--j'utilise html5-->
+<html lang="fr">  <!--la langue-->
+<head>
+    <meta charset="UTF-8">    <!--encodage--> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--l'adaptabilité mobile et autres-->
+    <title>Bienvenue sur la plateforme de préparation au TOEIC/TOEFL</title> <!--Mon titre-->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon"> <!--Mon icone-->
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif; 
+            margin: 0;    /*supprimer les marges extérieures*/
+            padding: 0;    /*supprimer les marges intérieures*/
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #2c3e50;
+            background-color: #f4f7fc;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .container {
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 450px;
+            position: relative;
+        }
+
+        h1 {
+            text-align: center;
+            color: #3498db;
+            margin-bottom: 30px;
+            font-size: 32px; /* Plus grand pour rendre le titre plus visible */
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 24px; /* Augmenté l'espace au-dessus du titre */
+        }
+
+        .form-group {
+            margin-bottom: 20px; /* espace entre les champs*/
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+
+        input, select, button {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-top: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        input[type="password"]:focus, input[type="email"]:focus, input[type="text"]:focus, select:focus {
+            border-color: #3498db;
+            outline: none;
+        }
+
+        button {
+            background-color: #3498db;
+            color: white;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            padding: 14px;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        .form-group small {
+            color: #e74c3c;
+        }
+
+        .social-login {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .social-login a {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #db4437;
+            color: white;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .social-login a:hover {
+            background-color: #c1351d;
+        }
+
+        .social-login .google-icon {
+            margin-right: 10px;
+            width: 20px;
+            height: 20px;
+        }
+
+        p {
+            text-align: center;
+            font-size: 16px;
+        }
+
+        p a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        p a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 14px;
+            color: #7f8c8d;
+        }
+            
+        .footer a {   /*le flou de l'image*/
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Image contextuelle avec transparence */
+        .right-side-image {
+            background-image: url('Images/image_de_la_marge_interface_de_connexion.jpg');
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            opacity: 0.6; /* Effet de transparence */
+            border-radius: 8px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bienvenue sur la plateforme de préparation au TOEIC/TOEFL</h1>
+        <!--Création de mes champs-->
+        <form id="signupForm" onsubmit="return loginUser(event)">
+            <!--Pour envoyer les informations de connexion à connexion.php-->
+            
+
+            
+
+            <div class="form-group">
+                <label for="numero_INE">Numéro INE</label>
+                <input type="text" id="numero_INE" name="numero_INE" required placeholder="Votre numéro INE" />
+            </div>
+            
+            
+
+            <div class="form-group">
+                <label for="motdepasse">Mot de passe</label>
+                <input type="password" id="motdepasse" name="motdepasse" required placeholder="Votre mot de passe" />
+            </div>
+
+            
+            
+
+            <button type="submit">Se connecter</button> <!--Bouton de connexion-->
+        </form>
+
+        <p>Vous n'êtes pas encore inscrit ? <a href="interface_de_connexion.html">Inscrivez vous ici</a></p> <!--Si compte inexistant le rediriger sur interface_de_connexion.html-->
+
+        <div class="social-login">
+            <!-- Connexion Google avec icône -->
+            <a href="#" class="google-login">
+                <img src="Images/image_icone_google.webp" alt="Google" class="google-icon">
+                Se connecter avec Google
+            </a>
+        </div>
+    </div>
+
+    <div class="right-side-image"></div> <!-- L'image contextuelle sur la marge droite -->
+
+    <div class="footer">
+        <p>&copy; 2025 Plateforme TOEIC/TOEFL. Tous droits réservés. | <a href="#">Mentions légales</a></p>
+    </div>
+
+    <script>
+        function loginUser(event) {
+            event.preventDefault(); // Empêche l'envoi classique du formulaire
+        
+            const numeroINE = document.getElementById('numero_INE').value;
+            const motdepasse = document.getElementById('motdepasse').value;
+        
+            // Tu peux faire ici une requête AJAX vers connexion.php si tu veux vraiment vérifier côté serveur
+            // Pour l'exemple ici, on simule juste une connexion simple sans serveur
+        
+            // Vérification simple (à remplacer par un vrai appel AJAX si besoin)
+            if (numeroINE.trim() !== "" && motdepasse.trim() !== "") {
+                // Imaginons que tu récupères le prénom ici depuis la BDD
+                let prenom = "Alpha"; // <-- ce serait dynamique normalement
+                let niveau = "Débutant"; // <-- pareil, ça vient de la BDD
+        
+                // Enregistrer dans le localStorage
+                localStorage.setItem('username', prenom);
+                localStorage.setItem('niveau', niveau);
+        
+                // Rediriger vers la page principale
+                window.location.href = "interface_principale.html"; 
+            } else {
+                alert("Veuillez remplir tous les champs !");
+            }
+        
+            return false;
+        }
+    </script>
+        
+</body>
+</html> 

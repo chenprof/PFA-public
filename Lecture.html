@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Section Lecture</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #d0e0d5;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            min-height: 100vh;
+        }
+
+        h1 {
+            color: #407b5d;
+            margin-top: 60px; /* plus grand pour laisser la place au bouton */
+        }
+
+        p {
+            color: #333;
+            max-width: 600px;
+            margin: 10px 0 40px;
+        }
+
+        .home-link {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            background: white;
+            padding: 8px 12px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .home-link img {
+            width: 30px;
+            margin-right: 8px;
+        }
+
+        .cards-container {
+            display: flex;
+            gap: 50px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .document-card {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background-color: #2d572c;
+            color: white;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            flex-direction: column;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .document-card.toic {
+            background: linear-gradient(45deg, #000, #666);
+        }
+
+        .document-card.toefl {
+            background-color: #427a5b;
+        }
+        .document-card.everyone{
+            background-color: #38A36C;
+        }
+        .document-card.starter{
+            background-color:#1A7B49 ;
+        }
+        .document-card.spoken{
+            background-color: #202B23;
+        }
+
+        .document-card:hover {
+            transform: scale(1.05);
+        }
+
+        .download-btn {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .download-btn img {
+            width: 24px;
+        }
+
+        .document-card:hover .download-btn {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="interface_principale.html" class="home-link">
+        <img src="https://img.icons8.com/ios-filled/50/000000/home.png" alt="Accueil">
+        Accueil
+    </a>
+
+    <h1>BIENVENUE DANS LA SECTION LECTURE</h1>
+    <p>Dans cette section, vous pouvez lire et télécharger des documents très intéressants, 
+       qui vont vous aider dans votre progression.</p>
+
+    <div class="cards-container">
+        <div class="document-card" onclick="openDocument('documents/Achieve TOEIC bridge.PDF')">
+            Archive TOEIC <br>Bridge
+            <button class="download-btn" onclick="downloadDocument(event, 'documents/Achieve TOEIC bridge.PDF')">
+                <img src="https://img.icons8.com/ios/50/000000/download--v1.png" alt="Télécharger">
+            </button>
+        </div>
+
+        <div class="document-card toic" onclick="openDocument('documents/TOEIC Grammar TOEIC Grammar ( PDFDrive ).pdf')">
+            TOEIC<br>Grammar
+            <button class="download-btn" onclick="downloadDocument(event, 'documents/TOEIC Grammar TOEIC Grammar ( PDFDrive ).pdf')">
+                <img src="https://img.icons8.com/ios/50/000000/download--v1.png" alt="Télécharger">
+            </button>
+        </div>
+
+        <div class="document-card toefl" onclick="openDocument('documents/Check your vocab for TOEIC Book.pdf ( PDFDrive ).pdf')">
+            check your<br>Vocabulary
+            <button class="download-btn" onclick="downloadDocument(event, 'documents/Check your vocab for TOEIC Book.pdf ( PDFDrive ).pdf')">
+                <img src="https://img.icons8.com/ios/50/000000/download--v1.png" alt="Télécharger">
+            </button>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="cards-container">
+        <div class="document-card everyone" onclick="openDocument('documents/English for Everyone_ English Grammar Guide. A comprehensive visual reference ( PDFDrive.com ).pdf')">
+            English for <br>Everyone
+            <button class="download-btn" onclick="downloadDocument(event, 'documents/English for Everyone_ English Grammar Guide. A comprehensive visual reference ( PDFDrive.com ).pdf')">
+                <img src="https://img.icons8.com/ios/50/000000/download--v1.png" alt="Télécharger">
+            </button>
+        </div>
+        <div class="document-card starter" onclick="openDocument('documents/Starter TOEIC, Third Edition (w 3 Audio CDs), Building TOEIC Test-taking Skills ( PDFDrive ).pdf')">
+            Starter <br>TOEIC
+            <button class="download-btn" onclick="downloadDocument(event, 'documents/Starter TOEIC, Third Edition (w 3 Audio CDs), Building TOEIC Test-taking Skills ( PDFDrive ).pdf')">
+                <img src="https://img.icons8.com/ios/50/000000/download--v1.png" alt="Télécharger">
+            </button>
+        </div>
+        <div class="document-card spoken" onclick="openDocument('documents/Spoken English Flourish Your Language.pdf')">
+            Spoken English 
+            <button class="download-btn" onclick="downloadDocument(event, 'documents/Spoken English Flourish Your Language.pdf')">
+                <img src="https://img.icons8.com/ios/50/000000/download--v1.png" alt="Télécharger">
+            </button>
+        </div>
+
+    </div>
+
+    <script>
+        function openDocument(url) {
+            window.open(url, '_blank');
+        }
+
+        function downloadDocument(event, url) {
+            event.stopPropagation();
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = '';
+            a.click();
+        }
+    </script>
+
+</body>
+</html>
